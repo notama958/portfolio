@@ -1,5 +1,4 @@
-import styles from '../styles/home.module.css';
-import { ReactElement } from 'react';
+import styles from './home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 

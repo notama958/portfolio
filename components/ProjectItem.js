@@ -1,14 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faExchangeAlt,
-  faExternalLinkAlt,
-} from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { projectData } from '../external/mydata';
-import styles from '../styles/Project.module.css';
+import styles from './Project.module.css';
 import Image from 'next/image';
-import smart_car from '../public/img/smart_car.png';
-import todo1 from '../public/img/to-do-1.png';
-import todo2 from '../public/img/to-do-2.png';
+
 const ProjectItem = ({ item, pid }) => {
   const getExtraData = () => {
     let project = projectData.filter((e, id) => e.name === item.name);

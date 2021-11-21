@@ -1,5 +1,4 @@
-import styles from '../styles/Home.module.css';
-import { useState, useEffect } from 'react';
+import styles from './Home.module.css';
 import Contact from '../components/Contact';
 import Intro from '../components/Intro';
 import ProjectItem from './ProjectItem';

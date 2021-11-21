@@ -7,7 +7,6 @@ const selectedRepos = [
   'TO-DO-List',
   'MUSIC_LED',
 ];
-//822af1aee25756745d1c61498ca463edaaf1edf7
 const getRepos = async () => {
   try {
     const username = myData.githubname;
@@ -17,7 +16,6 @@ const getRepos = async () => {
     let repos = res.data.items.filter((el) => {
       if (selectedRepos.includes(el.name)) return el;
     });
-    //console.log(repos);
     return repos;
   } catch (e) {
     console.log(e);
