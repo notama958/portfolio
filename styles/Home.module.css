@@ -1,0 +1,117 @@
+.container {
+  height: 80vh;
+  padding: 0 0.5rem;
+  margin: 6rem;
+  align-items: center;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.navbar {
+  display: block;
+  background-color: beige;
+  font-weight: 500;
+  flex: 30%;
+  /* margin: 10px; */
+  border-radius: 10px;
+  /* border: thin solid black; */
+  height: 80vh;
+  padding: 1px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.navbar div {
+  margin: 5px;
+  padding: 10px;
+  line-height: 2em;
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.navbar div span {
+  /* border: 1px solid black; */
+  /* padding: 10px; */
+  width: 100%;
+}
+.navbar div:hover,
+.navbar div:focus,
+.navbar div:active {
+  background-color: aliceblue;
+  color: blue;
+}
+.modal {
+  flex: 70%;
+  display: block;
+  /* text-align: justify; */
+  margin-left: 10px;
+  align-items: flex-start;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  background-color: aliceblue;
+}
+
+.title {
+  margin: 0;
+  line-height: 1;
+  font-size: 2rem;
+}
+
+.title,
+.description {
+  text-align: left;
+}
+
+.description {
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+}
+.home {
+  padding: 10px;
+  font-size: 20px;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .navbar {
+    display: flex;
+    background-color: beige;
+    font-weight: 500;
+    /* margin: 10px; */
+    border-radius: 10px;
+    /* border: thin solid black; */
+    margin-bottom: 20px;
+    height: 80vh;
+    padding: 1px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .modal {
+    display: block;
+    /* text-align: justify; */
+    margin-left: 0px;
+    align-items: flex-start;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    background-color: aliceblue;
+  }
+}

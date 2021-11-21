@@ -1,209 +1,131 @@
-import Head from 'next/head'
-
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import ModalView from '../components/Modal';
+import styles from '../styles/Home.module.css';
+import { myData } from '../external/mydata';
+import getRepos from '../external/getRepos';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCopyright } from '@fortawesome/free-solid-svg-icons';
 export default function Home() {
+  const [selection, setSelection] = useState('home');
+  const [projects, setProjects] = useState([]);
+  const [pid, setPid] = useState(null);
+  const [modalView, setModalView] = useState(myData);
+  useEffect(async () => {
+    console.log(selection);
+    const repos = await getRepos();
+    setProjects(repos);
+  }, [selection]);
   return (
-    <div className="container">
+    <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Yen Tran's Porfolio</title>
       </Head>
-
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
+      <div className={styles.main}>
+        <div className={styles.navbar}>
+          <div
+            onClick={(e) => {
+              setSelection('home');
+              setModalView(myData);
+            }}
+            className={`card ${selection == 'home' ? 'selected' : ''}`}
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
+            Home
+          </div>
+          <div className={`card ${selection == 'project' ? 'selected' : ''}`}>
+            <span onClick={(e) => setSelection('project')}>Projects</span>
+            <ul
+              className={`card_content ${
+                selection.includes('project') ? 'visible' : ''
+              }`}
+            >
+              {projects !== undefined
+                ? projects.map((el, id) => (
+                    <li
+                      onClick={(e) => {
+                        setSelection('project');
+                        setPid(id);
+                        setModalView(el);
+                      }}
+                      className={`item ${pid === id ? 'highlighted' : ''}`}
+                      key={id}
+                    >
+                      {el.name.charAt(0).toUpperCase() +
+                        el.name.substring(1).toLowerCase()}
+                    </li>
+                  ))
+                : ''}
+            </ul>
+          </div>
+          <div
+            onClick={(e) => {
+              setSelection('contact');
+              setModalView(myData);
+            }}
+            className={`card ${selection == 'contact' ? 'selected' : ''}`}
           >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
-
+            Contact
+          </div>
+        </div>{' '}
+        <ModalView
+          data={modalView}
+          selection={selection}
+          pid={pid}
+          projects={projects}
+        />
+      </div>
       <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
         .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
+          position: relative;
+        }
+        .card.selected {
+          background-color: #fff0f5;
+          color: blue;
           border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
         }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
+        .card_content {
+          display: none;
+          position: relative;
+          min-width: 160px;
+          z-index: 1;
         }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
+        .card_content.visible {
+          display: block;
         }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
+        .card_content li:hover {
+          padding: 10px;
+          border-radius: 10px;
+          /* margin: auto; */
+          color: black;
         }
-
-        .logo {
-          height: 1em;
+        .item.highlighted {
+          background-color: #b0e0e6;
+          padding: 10px;
+          border-radius: 10px;
+          /* margin: auto; */
+          color: black;
         }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
+        @media (max-width: 700px) {
+          .card_content {
+            display: none;
+            position: relative;
+            min-width: 160px;
+            max-height: 100px;
+            z-index: 1;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
           }
         }
       `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+      <footer>
+        <small>
+          <i>"Eager to learn new things and enjoy solving problems"</i>{' '}
+        </small>
+        <a>
+          <FontAwesomeIcon icon={faCopyright} /> Yen Tran
+        </a>{' '}
+      </footer>
     </div>
-  )
+  );
 }

@@ -1,0 +1,48 @@
+.project {
+  font-size: 20px;
+  padding: 10px;
+  line-height: 3rem;
+}
+.project h2 {
+  font-weight: 500;
+}
+.project a {
+  font-style: italic;
+}
+.project a:hover {
+  color: blue;
+}
+.project_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 10px;
+  background-color: white;
+  justify-content: space-around;
+}
+
+.project_content table,
+.project_content th,
+.project_content td {
+  font-size: 15px;
+  border: 1px solid black;
+  padding: 5px;
+}
+.project_content table {
+  border-collapse: collapse;
+  flex: 30%;
+}
+.project_content table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.project_content table tr:hover {
+  background-color: #ddd;
+}
+.project_img {
+  flex: 70%;
+  text-align: center;
+  /* border: 1px solid black; */
+}
