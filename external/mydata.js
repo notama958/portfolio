@@ -1,8 +1,13 @@
-import smart_car from '/img/smart_car.png';
-import todo1 from '/img/to-do-1.png';
-import todo2 from '/img/to-do-2.png';
-import music_led from '/img/music_led.png';
-import vj from '/img/vj.png';
+// import smart_car from '/img/smart_car.png';
+// import todo1 from '/img/to-do-1.png';
+// import todo2 from '/img/to-do-2.png';
+// import music_led from '/img/music_led.png';
+// import vj from '/img/vj.png';
+const smart_car = '/img/smart_car.png';
+const todo1 = '/img/to-do-1.png';
+const todo2 = '/img/to-do-2.png';
+const music_led = '/img/music_led.png';
+const vj = '/img/vj.png';
 
 export const myData = {
   githubname: 'notama958',
