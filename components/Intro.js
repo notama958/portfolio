@@ -1,4 +1,4 @@
-import styles from '.-home.module.css';
+import styles from './Home.module.css';
 import Work from './Work';
 import Skill from './Skill';
 const Intro = ({ data }) => {
