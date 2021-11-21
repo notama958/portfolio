@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import ModalView from '../components/Modal';
 import styles from '../styles/Home.module.css';
