@@ -3,8 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
-  },
+    "start": "next start",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm run build"  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
