@@ -1,1 +1,7 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+## PORTFOLIO PAGE FOR SOFTWARE JOB HUNTING
+
+### tech
+
+- Nextjs
+- Axios
+- Heroku
