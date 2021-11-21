@@ -1,6 +1,6 @@
 const smart_car = '/img/smart_car.png';
-const todo1 = '/img/to-do-1.png';
-const todo2 = '/img/to-do-2.png';
+const todo1 = '/img/todo1.png';
+const todo2 = '/img/todo2.png';
 const music_led = '/img/music_led.png';
 const vj = '/img/vj.png';
 
