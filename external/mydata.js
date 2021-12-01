@@ -47,6 +47,7 @@ export const myData = {
     Container: ['Docker'],
     Testing: ['Robot framework'],
   },
+  other: 'https://github.com/notama958/portfolio',
 };
 
 export const projectData = [

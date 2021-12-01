@@ -6,7 +6,7 @@ const Contact = ({ data }) => {
   console.log(data);
   return (
     <div className={styles.home}>
-      <h2>
+      <h2 className={styles.title}>
         Yen Tran - 3<small>rd</small> year Software Engineering student (TAMK)
       </h2>
       <ul className="social-icons">

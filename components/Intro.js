@@ -4,10 +4,9 @@ import Skill from './Skill';
 const Intro = ({ data }) => {
   return (
     <div className={styles.home}>
-      <h2>{data.about.title}</h2>
+      <h2 className={styles.title}>{data.about.title}</h2>
       <p>{data.about.description}</p>
 
-      <br />
       <br />
       <h3>My experiences</h3>
       <table id="work">

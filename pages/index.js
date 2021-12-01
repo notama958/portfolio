@@ -66,6 +66,15 @@ export default function Home() {
           >
             Contact
           </div>
+          <div
+            className={`card ${selection == 'other' ? 'selected' : ''}`}
+            onClick={(e) => {
+              setSelection('other');
+              setModalView(myData);
+            }}
+          >
+            Other
+          </div>
         </div>{' '}
         <ModalView
           data={modalView}
