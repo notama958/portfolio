@@ -5,3 +5,5 @@
 - Nextjs
 - Axios
 - Heroku
+
+[deploying_url](http://portfolio-herku.herokuapp.com/)
