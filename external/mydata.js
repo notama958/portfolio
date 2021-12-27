@@ -3,7 +3,7 @@ const todo1 = '/img/todo1.png';
 const todo2 = '/img/todo2.png';
 const music_led = '/img/music_led.png';
 const vj = '/img/vj.png';
-const reaktor = '/img/reaktor.png';
+const reak = '/img/reaktor.png';
 
 export const myData = {
   githubname: 'notama958',
@@ -59,9 +59,9 @@ export const projectData = [
     alt: 'Upgraded UI for TO-DO-List project',
   },
   {
-    name: 'Reaktor',
+    name: 'reaktor',
     tech: ['React', 'Redux', 'ExpressJs', 'MongoDB', 'Docker'],
-    img: reaktor,
+    img: reak,
     alt: 'reaktor web full-stack pre-assignment 2022',
   },
   {
