@@ -3,6 +3,7 @@ const todo1 = '/img/todo1.png';
 const todo2 = '/img/todo2.png';
 const music_led = '/img/music_led.png';
 const vj = '/img/vj.png';
+const reaktor = '/img/reaktor.png';
 
 export const myData = {
   githubname: 'notama958',
@@ -53,9 +54,15 @@ export const myData = {
 export const projectData = [
   {
     name: 'To-do-app-upgrade',
-    tech: ['JavaScript', 'React', 'Redux', 'json-server'],
+    tech: ['JavaScript', 'React', 'Redux', 'SQLite', 'Knexjs'],
     img: todo2,
     alt: 'Upgraded UI for TO-DO-List project',
+  },
+  {
+    name: 'Reaktor',
+    tech: ['React', 'Redux', 'ExpressJs', 'MongoDB', 'Docker'],
+    img: reaktor,
+    alt: 'reaktor web full-stack pre-assignment 2022',
   },
   {
     name: 'TO-DO-List',
@@ -90,8 +97,9 @@ export const projectData = [
   },
   {
     name: 'MUSIC_LED',
-    tech: ['C++', 'Arduino', 'Python', 'Raspberry Pi', 'UART communication'],
+    tech: ['Python', 'Raspberry Pi'],
     img: music_led,
+    alt: 'Home led control via Siri voice',
   },
 ];
 // export default myData;

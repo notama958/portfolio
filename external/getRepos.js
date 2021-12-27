@@ -4,8 +4,8 @@ const selectedRepos = [
   'To-do-app-upgrade',
   'SMART_CAR',
   'Virtual-Journey',
-  'TO-DO-List',
   'MUSIC_LED',
+  'reaktor',
 ];
 const getRepos = async () => {
   try {
