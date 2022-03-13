@@ -8,6 +8,7 @@
 }
 .project a {
   font-style: italic;
+  font-size: medium;
 }
 .project a:hover {
   color: blue;

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import ModalView from '../components/Modal';
-import styles from '../styles/Home.module.css';
+import styles from '../components/Home.module.css';
 import { myData } from '../external/mydata';
 import getRepos from '../external/getRepos';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -123,6 +123,22 @@ export default function Home() {
             z-index: 1;
             overflow-y: scroll;
             scroll-behavior: smooth;
+          }
+        }
+        @media (max-width: 440px) {
+          .card_content {
+            display: none;
+            position: relative;
+            min-width: 160px;
+            max-height: 100px;
+            z-index: 1;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            padding:0;
+          }
+          .card {
+            position: relative;
+            padding:auto;
           }
         }
       `}</style>

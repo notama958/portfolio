@@ -8,7 +8,7 @@ const Intro = ({ data }) => {
       <p>{data.about.description}</p>
 
       <br />
-      <h3>My experiences</h3>
+      <h3 className={styles.header}>My experiences</h3>
       <table id="work">
         <tbody>
           <tr>
@@ -23,7 +23,7 @@ const Intro = ({ data }) => {
         </tbody>
       </table>
       <br />
-      <h3>My skills</h3>
+      <h3 className={styles.header}>My skills</h3>
       <table>
         {Object.entries(data.skills).map(([key, value], index) => (
           <Skill data={value} id={key} key={index} />

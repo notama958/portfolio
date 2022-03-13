@@ -6,6 +6,9 @@ const selectedRepos = [
   'Virtual-Journey',
   'MUSIC_LED',
   'reaktor',
+  'Ties2022',
+  'pregit',
+
 ];
 const getRepos = async () => {
   try {
@@ -19,6 +22,7 @@ const getRepos = async () => {
     return repos;
   } catch (e) {
     console.log(e);
+    return [];
   }
 };
 export default getRepos;

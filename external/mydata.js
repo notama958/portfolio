@@ -4,6 +4,8 @@ const todo2 = '/img/todo2.png';
 const music_led = '/img/music_led.png';
 const vj = '/img/vj.png';
 const reak = '/img/reaktor.png';
+const pregit = '/img/pregit.png';
+const ties = '/img/ties.png';
 
 export const myData = {
   githubname: 'notama958',
@@ -13,7 +15,7 @@ export const myData = {
   about: {
     title: 'Xin Chao/Moika/Hi!🙇‍♀️🙇‍♀️🙇‍♀️',
     description:
-      "I'm Yen Tran, a Vietnamese student majoring in Software Engineering at Tampere University of Applied Sciences.\nAt the moment, I'm looking for an internship opportunity for this summer 2022. My interests are IoT, Web Development and Cloud Techonologies, nonetheless, It would be awesome to learn and cultivate other fields as well.",
+      "I'm Yen Tran, a Vietnamese student majoring in Software Engineering at Tampere University of Applied Sciences.\nAt the moment, I'm looking for an internship opportunity for my thesis topic . My interests are IoT, Web Development and Cloud Techonologies, nonetheless, It would be awesome to learn and cultivate other fields as well.",
   },
   work: [
     {
@@ -29,6 +31,13 @@ export const myData = {
       from: '10/2021',
       to: '12/2021',
       desc: "Work as a student tutor for junior students in Software Engineering Department, where main tasks involve in holding self-studying tutor classrooms both online and on-site at TAMK, support student with homework problems, and teacher's assistant",
+    },
+    {
+      title: 'Embedded Software Trainee',
+      company: 'ABB',
+      from: '05/2022',
+      to: '08/2022',
+      desc: "Working with ACS380 - machinery drive in C/C++, more detail tasks I will update later on",
     },
   ],
   socialLinks: {
@@ -46,7 +55,7 @@ export const myData = {
       'I2C',
     ],
     Container: ['Docker'],
-    Testing: ['Robot framework'],
+    Testing: ['Robot framework','Selenium','WebdriverIO'],
   },
   other: 'https://github.com/notama958/portfolio',
 };
@@ -89,11 +98,13 @@ export const projectData = [
       'xhttp',
     ],
     img: smart_car,
+    alt: 'arduino-project'
   },
   {
     name: 'Virtual-Journey',
     tech: ['React Native'],
     img: vj,
+    alt:'React-Native'
   },
   {
     name: 'MUSIC_LED',
@@ -101,5 +112,18 @@ export const projectData = [
     img: music_led,
     alt: 'Home led control via Siri voice',
   },
+  {
+    name: 'Ties2022',
+    tech:['Python',"OpenCV",'I2C','Adafruit libaries',"Raspberry Pi"],
+    img: ties,
+    alt:"ties2022"
+  },
+  {
+    name: 'pregit',
+    tech:['Python'],
+    img:pregit,
+    alt:"pregit"
+  },
+
 ];
 // export default myData;
