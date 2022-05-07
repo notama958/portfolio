@@ -29,12 +29,14 @@ const ProjectItem = ({ item, pid }) => {
             </tr>
           </tbody>
         </table>
-        <span className={styles.project_img}>
+        <span className={styles.project_img} >
           <Image
             src={getExtraData()[0].img}
             alt="Picture of the author"
-            width={item.name === 'Virtual-Journey' ? 200 : 500}
-            height={item.name === 'Virtual-Journey' ? 400 : 300}
+            layout='fill'
+
+            objectFit='contain'
+
           />{' '}
         </span>
       </div>
